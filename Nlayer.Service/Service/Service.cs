@@ -10,7 +10,7 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Nlayer.Service
+namespace Nlayer.Service.Service
 {
     public class Service<T> : IService<T> where T : class
     {
@@ -19,8 +19,8 @@ namespace Nlayer.Service
 
         public Service(IGenericRepository<T> repository, IUnitofWork unitofWork)
         {
-            _repository=repository;
-            _unitOfWork=unitofWork;
+            _repository = repository;
+            _unitOfWork = unitofWork;
         }
         public async Task<T> AddAsync(T entity)
         {
