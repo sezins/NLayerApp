@@ -1,8 +1,10 @@
 ﻿using AutoMapper;
 using Nlayer.Core.DTOs;
 using Nlayer.Core.Entity;
+using Nlayer.Core.NewFolder;
 using Nlayer.Core.Repositories;
 using Nlayer.Core.Service;
+using Nlayer.Repository.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,13 +17,14 @@ namespace Nlayer.Service.Service
     {
         private readonly ICategoryRepository _categoryRepository;
         private readonly IMapper _mapper;
-        public CategoryService(ICategoryRepository _categoryRepository, IMapper _mapper)
+        public CategoryService(IGenericRepository<Category> repository, IUnitofWork unitofWork, ICategoryRepository categoryRepository, IMapper mapper) : base(repository, unitofWork)
+        {
+            _mapper = mapper;
+            _categoryRepository = categoryRepository;            
+        }
+        public async Task<CustomResponseDto<List<ProductWithCategoryDto>>> GetSingleCategoryByIdwithProductAsync(int categoryId)
         {
             
-        }
-        public Task<CustomResponseDto<List<ProductWithCategoryDto>>> GetSingleCategoryByIdwithProductAsync(int categoryId)
-        {
-            throw new NotImplementedException();
         }
     }
 }
