@@ -7,16 +7,26 @@ using Nlayer.Core.Service;
 
 namespace Nlayer.Apı.Controllers
 {
-    [Route("api/[controller]")]
-    [ApiController]
+    
     public class ProductsController : CustomBaseController
     {
         private readonly IMapper _mapper;
         private readonly IService<Product> _service;
-        public ProductsController(IMapper mapper, IService< Product> service)
+        private readonly IProductService productService;
+        public ProductsController(IMapper mapper, IService< Product> service, IProductService productService)
         {
             _service = service;
             _mapper = mapper;
+            this.productService = productService;
+        }
+
+        //api/products/GetProductWithCategory
+        //[HttpGet("[action]")]
+        [HttpGet("[action]")]
+        public async Task<IActionResult> GetProductWithCategory() 
+        {
+            //ozellesmıs bır data oldugu ıcın repo ve servıcede yazıyoruz
+           return CreateActionResult(await productService.GetProductsWithCategory());
         }
         //api/products
         [HttpGet]
