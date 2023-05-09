@@ -21,10 +21,13 @@ namespace Nlayer.Service.Service
         {
             _mapper = mapper;
             _categoryRepository = categoryRepository;            
-        }
-        public async Task<CustomResponseDto<List<ProductWithCategoryDto>>> GetSingleCategoryByIdwithProductAsync(int categoryId)
+        }        
+
+        public async Task<CustomResponseDto<CategoryWithProductsDto>> GetSingleCategoryByIdwithProductAsync(int categoryId)
         {
-            
+            var category = await _categoryRepository.GetSingleCategoryByIdwithProductAsync(categoryId);
+            var categoryDto = _mapper.Map<CategoryWithProductsDto>(category);
+            return CustomResponseDto<CategoryWithProductsDto>.Success(200, categoryDto);
         }
     }
 }
