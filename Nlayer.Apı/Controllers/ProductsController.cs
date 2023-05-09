@@ -1,13 +1,14 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Nlayer.Apı.Filter;
 using Nlayer.Core.DTOs;
 using Nlayer.Core.Entity;
 using Nlayer.Core.Service;
 
 namespace Nlayer.Apı.Controllers
 {
-    
+    [ValidateFilterAttribute]
     public class ProductsController : CustomBaseController
     {
         private readonly IMapper _mapper;

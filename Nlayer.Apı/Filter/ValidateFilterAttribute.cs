@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc.Filters;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Filters;
+using Nlayer.Core.DTOs;
 
 namespace Nlayer.Apı.Filter
 {
@@ -8,9 +10,10 @@ namespace Nlayer.Apı.Filter
         {
             if (!context.ModelState.IsValid)
             {
-                var errors = context.ModelState.Values.SelectMany(x => x.Errors);
+                var errors = context.ModelState.Values.SelectMany(x => x.Errors).Select(x => x.ErrorMessage).ToList();  
 
-                errors.ToList().ForEach(x => { });
+                context.Result=new BadRequestObjectResult(CustomResponseDto<NoContentDto>.Fail(400,errors));
+               
             }
         }
     }
