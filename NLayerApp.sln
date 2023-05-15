@@ -3,15 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33530.505
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nlayer.Core", "Nlayer.Core\Nlayer.Core.csproj", "{A4FF3723-9517-4053-8C30-12227DD6BD23}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nlayer.Core", "Nlayer.Core\Nlayer.Core.csproj", "{A4FF3723-9517-4053-8C30-12227DD6BD23}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nlayer.Repository", "Nlayer.Repository\Nlayer.Repository.csproj", "{C63E1C02-CD21-47CD-B43C-0D8E941B0C05}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nlayer.Repository", "Nlayer.Repository\Nlayer.Repository.csproj", "{C63E1C02-CD21-47CD-B43C-0D8E941B0C05}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nlayer.Service", "Nlayer.Service\Nlayer.Service.csproj", "{D831DFBA-729F-4141-A037-26D53862A52A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nlayer.Service", "Nlayer.Service\Nlayer.Service.csproj", "{D831DFBA-729F-4141-A037-26D53862A52A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nlayer.Apı", "Nlayer.Apı\Nlayer.Apı.csproj", "{632A8B5C-42AB-4086-9BB4-483140872CC9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nlayer.Apı", "Nlayer.Apı\Nlayer.Apı.csproj", "{632A8B5C-42AB-4086-9BB4-483140872CC9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nlayer.Caching", "Nlayer.Caching\Nlayer.Caching.csproj", "{86C82868-0741-413D-8F24-3B6CB56D49F2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nlayer.Caching", "Nlayer.Caching\Nlayer.Caching.csproj", "{86C82868-0741-413D-8F24-3B6CB56D49F2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,9 +1,11 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Moq;
 using Nlayer.Apı.Filter;
 using Nlayer.Core.DTOs;
 using Nlayer.Core.Entity;
+using Nlayer.Core.Repositories;
 using Nlayer.Core.Service;
 
 namespace Nlayer.Apı.Controllers
@@ -11,9 +13,12 @@ namespace Nlayer.Apı.Controllers
     [ValidateFilterAttribute]
     public class ProductsController : CustomBaseController
     {
+        
         private readonly IMapper _mapper;
         private readonly IService<Product> _service;
         private readonly IProductService productService;
+        
+
         public ProductsController(IMapper mapper, IService< Product> service, IProductService productService)
         {
             _service = service;
@@ -29,6 +34,7 @@ namespace Nlayer.Apı.Controllers
             //ozellesmıs bır data oldugu ıcın repo ve servıcede yazıyoruz
            return CreateActionResult(await productService.GetProductsWithCategory());
         }
+
         //api/products
         [HttpGet]
         public async Task<IActionResult> All()
