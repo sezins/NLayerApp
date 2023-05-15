@@ -43,6 +43,12 @@ namespace Nlayer.Apı.Controllers
         public async Task<IActionResult> GetById(int id)
         {
             var products = await _service.GetByIdAsync(id);
+
+            //if (products==null)
+            //{
+            //    return CreateActionResult(CustomResponseDto<List<ProductDto>>.Fail(400, "Bu id'ye sahip ürün bulunmamaktadır."));
+            //}
+
             var productsDtos = _mapper.Map<List<ProductDto>>(products);
             return CreateActionResult(CustomResponseDto<List<ProductDto>>.Success(200, productsDtos));
         }

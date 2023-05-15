@@ -3,6 +3,7 @@ using Nlayer.Core.NewFolder;
 using Nlayer.Core.Repositories;
 using Nlayer.Core.Service;
 using Nlayer.Repository.UnitOfWork;
+using Nlayer.Service.Exceptions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -49,7 +50,13 @@ namespace Nlayer.Service.Service
 
         public async Task<T> GetByIdAsync(int id)
         {
-            return await _repository.GetByIdAsync(id);
+            var hasProduct= await _repository.GetByIdAsync(id);
+
+            if (hasProduct==null)
+            {
+                throw new NotFoundException($"{typeof(T).Name} not found");
+            }
+            return hasProduct;
         }
         //SaveChange asenkron olduğu için yani CommitAsync Remove ve update'i asenkron olarak tanımladık.
         public async Task RemoveAsync(T entity)
