@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nlayer.Apı", "Nlayer.Apı\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nlayer.Caching", "Nlayer.Caching\Nlayer.Caching.csproj", "{86C82868-0741-413D-8F24-3B6CB56D49F2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestProject", "TestProject\TestProject.csproj", "{E193E1BF-BD23-4926-B942-732C07F08A3E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{86C82868-0741-413D-8F24-3B6CB56D49F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{86C82868-0741-413D-8F24-3B6CB56D49F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{86C82868-0741-413D-8F24-3B6CB56D49F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E193E1BF-BD23-4926-B942-732C07F08A3E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E193E1BF-BD23-4926-B942-732C07F08A3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E193E1BF-BD23-4926-B942-732C07F08A3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E193E1BF-BD23-4926-B942-732C07F08A3E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

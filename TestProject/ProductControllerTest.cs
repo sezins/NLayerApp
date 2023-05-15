@@ -66,6 +66,33 @@ namespace TestProject
 
         }
 
+        [Theory]
+        [InlineData(0)]
+        public async void GetProduct_IdInValid_ReturnNotFound(int id)
+        {
+            Product product = null;
+            _mockRepository.Setup(x => x.GetByIdAsync(id)).ReturnsAsync(product);
+            var result=await _productsController.GetById(id);
+            Assert.IsType<NotFoundResult>(result);
+        }
+
+        [Theory]
+        [InlineData(1)]
+        [InlineData(2)]
+        public async void GetProduct_IdInValid_ReturnOkResult(int id)
+        {
+            var product = products.First(x => x.Id == id);
+
+            _mockRepository.Setup(x => x.GetByIdAsync(id)).ReturnsAsync(product);
+
+            var result = await _productsController.GetById(id);
+            var okResult=Assert.IsType<OkObjectResult>(result);
+            var returnProduct = Assert.IsType<Product>(okResult.Value);
+
+            Assert.Equal(id, returnProduct.Id);
+            Assert.Equal(product.Name, returnProduct.Name);
+            
+        }
 
     }
 }
